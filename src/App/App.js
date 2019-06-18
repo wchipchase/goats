@@ -1,6 +1,8 @@
 import React from 'react';
 
-import goats from './goats';
+import myGoats from './goats';
+
+import GoatCorral from '../components/GoatCorral/GoatCorral';
 
 import './App.scss';
 
@@ -13,17 +15,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ goats });
+    this.setState({ goats: myGoats });
   }
 
   render() {
+    const { goats } = this.state;
     // This is where you would iterate over an array. No need for this. syntax . {} is javascript
     // no {} = string
     return (
       // This is where JSX is written (domstring stuff)
       <div className='App'>
         <div>Goat Yoga</div>
-        {/* <GoatCorral goats={goats}/> */}
+        <GoatCorral goats={goats}/>
       </div>
 
     );
